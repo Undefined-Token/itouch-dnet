@@ -1,0 +1,42 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>netstandard2.0;net461</TargetFrameworks>
+    <LangVersion>7.0</LangVersion>
+    <RootNamespace>ITouch</RootNamespace>
+    <Authors>iTouch</Authors>
+    <Company>iTouch</Company>
+    <Product>itouch-auto</Product>
+    <Description>iTouch Automation Tool Without Jailbreak CSharp Package.</Description>
+    <Copyright>Copyright © iTouch</Copyright>
+    <PackageId>itouch-auto</PackageId>
+    <PackageVersion>1.0.3</PackageVersion>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/Undefined-Token/itouch-dnet</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/Undefined-Token/itouch-dnet</RepositoryUrl>
+    <PackageTags>IOS;Automation;Without Jailbreak</PackageTags>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">
+    <PackageReference Include="System.Net.WebSockets.Client" Version="4.3.2" />
+    <PackageReference Include="System.Text.Json" Version="9.0.0" />
+  </ItemGroup>
+  
+  <ItemGroup Condition="'$(TargetFramework)' == 'net461'">
+    <PackageReference Include="System.Net.WebSockets.Client" Version="4.3.2" />
+    <PackageReference Include="System.Text.Json" Version="4.7.2" />
+    <Reference Include="System.Net.Http" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="README.md" Pack="true" PackagePath="\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Program.cs" />
+    <Compile Remove="ITouch.cs" />
+  </ItemGroup>
+
+</Project>
